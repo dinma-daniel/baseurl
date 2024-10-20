@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  .dark #root {
+    background-color: #0a1929;
+  }
+  #root {
+    background-color: #fff;
+  }
+}
+
+@layer components {
+  input:checked ~ .dot {
+    transform: translateX(100%);
+  }
+  input:checked ~ .block {
+    background-color: #7964ff;
+  }
+
+  /* Hide scrollbar for Chrome; Safari and Opera */
+  .s_hide::-webkit-scrollbar {
+    display: none;
+  }
+  .s_hide {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+
+  /* Loading Animation */
+  .loader {
+    border: 10px solid #132f4c;
+    border-top: 10px solid #7f75ef;
+    border-radius: 50%;
+    width: 8rem;
+    height: 8rem;
+    animation: spin 1s linear infinite;
+  }
+
+  .dark .shine {
+    background: #070707;
+    background-image: linear-gradient(
+      to right,
+      #070707 0%,
+      #171717 20%,
+      #171717 40%,
+      #070707 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: relative;
+
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: l;
+  }
+
+  .shine {
+    background: #fff;
+    background-image: linear-gradient(
+      to right,
+      #fff 0%,
+      #e5e7eb 20%,
+      #e5e7eb 40%,
+      #fff 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: relative;
+
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: l;
+  }
+
+  .dark .shine {
+    background: #132f4c;
+    background-image: linear-gradient(
+      to right,
+      #132f4c 0%,
+      #0a1929 20%,
+      #0a1929 40%,
+      #132f4c 100%
+    );
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: inline-block;
+    position: relative;
+
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    animation-iteration-count: infinite;
+    animation-name: placeholderShimmer;
+    animation-timing-function: l;
+  }
+
+  @keyframes placeholderShimmer {
+    0% {
+      background-position: -40rem 0;
+    }
+
+    100% {
+      background-position: 40rem 0;
+    }
+  }
+
+  /* Add these custom styles for the new color scheme */
+  .bg-carbon-black {
+    background-color: #0D1117;
+  }
+  .text-moonlight-white {
+    color: #E3E4E6;
+  }
+  .bg-neon-coral {
+    background-color: #FF6F61;
+  }
+  .text-carbon-black {
+    color: #0D1117;
+  }
+  .hover\:bg-electric-cyan:hover {
+    background-color: #00E0FF;
+  }
+  .bg-steel-gray {
+    background-color: #B0B5C2;
+  }
+  .text-steel-gray {
+    color: #B0B5C2;
+  }
+  .bg-lime-green {
+    background-color: #B4FF00;
+  }
+
+  /* Responsive design adjustments */
+  /* .hero-section {
+    background-image: url('./images/hero-bg-pattern.png');
+    background-size: cover;
+    background-position: center;
+  } */
+}
